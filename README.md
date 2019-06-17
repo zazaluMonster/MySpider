@@ -44,3 +44,8 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
  # At last
  
  喜欢请star!(star多说不定会有后续更新哦...)
+ 
+ 
+# LICENSE
+
+[MIT](https://github.com/zazaluMonster/MySpider/blob/master/LICENSE)
