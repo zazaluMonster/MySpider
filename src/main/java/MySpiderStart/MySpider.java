@@ -2,6 +2,7 @@ package MySpiderStart;
 
 import Boot.Boot;
 import Boot.custom.DemoBoot;
+import DataService.DataService;
 import DownLoader.Downloader;
 import DownLoader.custom.StreamDownloader;
 import Processor.Processor;
@@ -11,6 +12,7 @@ import Util.MyLogger;
 
 import java.io.File;
 import java.net.URL;
+import java.util.List;
 
 /**
  * 网络爬虫入口程序
@@ -21,6 +23,7 @@ public class MySpider {
     private ScheduleQueue scheduleQueue;
     private Downloader downloader;
     private Processor processor;
+    private DataService dataService;
     private static URL[] urls;
 
     public MySpider(URL[] urls){
@@ -55,6 +58,13 @@ public class MySpider {
             throw new Exception("please add your own processor");
         }
 
+        //dataService
+        if(dataService == null){
+            MyLogger.log("there's no dataService,so data will don't save into your database.");
+        }else{
+            dataService.init();
+        }
+
     }
 
     public void start() throws Exception {
@@ -65,7 +75,13 @@ public class MySpider {
         while(scheduleQueue.size() > 0){
             downloader.reset(scheduleQueue.nextURL());
             File downloadFile = downloader.run();
-            File tempFile = processor.parseToFile(downloadFile);
+            if(dataService == null){
+                File tempFile = processor.parseToFile(downloadFile);
+            }else{
+                List list = processor.parseToList(downloadFile);
+                dataService.adds(list);
+            }
+
             if(scheduleQueue.size() >= 1){
                 Thread.sleep(1000*60);//一分钟爬一次
             }
@@ -91,6 +107,11 @@ public class MySpider {
 
     public MySpider addProcessor(Processor processor) throws Exception {
         this.processor = processor;
+        return this;
+    }
+
+    public MySpider addDataService(DataService dataService){
+        this.dataService = dataService;
         return this;
     }
 

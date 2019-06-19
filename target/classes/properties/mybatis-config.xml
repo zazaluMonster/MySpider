@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <properties>
+        <property name="username" value="zazalu"/>
+        <property name="password" value="he65177032"/>
+<!--        <property name="driver" value="com.mysql.jdbc.Driver"/> &lt;!&ndash; in mysql8.0.16 This is deprecated  &ndash;&gt;-->
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/MySpider?useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
+        <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/> <!-- 运行时创建这个变量，这个变量启动了第19行使用的默认值的功能 -->
+    </properties>
+
+    <settings>
+        <setting name="useGeneratedKeys" value="false"/>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <setting name="defaultStatementTimeout" value="25"/>
+    </settings>
+
+    <typeAliases>
+        <package name="DataObject"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!-- 使用数据库池进行连接，最流行 -->
+            <dataSource type="POOLED">
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="poolMaximumActiveConnections" value="20"/>
+                <property name="poolMaximumIdleConnections" value="10"/>
+                <property name="poolTimeToWait" value="60000"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 加载映射器类 -->
+    <mappers>
+        <package name="DatabaseAssist.mybatis.mapper"/>
+<!--        <mapper resource="DatabaseAssist.mybatis.mapper.YouthNewsMapper.xml"/>-->
+    </mappers>
+
+
+</configuration>
