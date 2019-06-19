@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <properties>
+        <property name="username" value="zazalu"/>
+        <property name="password" value="he65177032"/>
+        <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/> <!-- 运行时创建这个变量，这个变量启动了第19行使用的默认值的功能 -->
+    </properties>
+
+    <!-- Mybatis配置 看这个文档了解每项的含义http://www.mybatis.org/mybatis-3/zh/configuration.html#settings  -->
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="multipleResultSetsEnabled" value="true"/>
+        <setting name="useColumnLabel" value="true"/>
+        <setting name="useGeneratedKeys" value="false"/>
+        <setting name="autoMappingBehavior" value="PARTIAL"/>
+        <setting name="autoMappingUnknownColumnBehavior" value="WARNING"/>
+        <setting name="defaultExecutorType" value="SIMPLE"/>
+        <setting name="defaultStatementTimeout" value="25"/>
+        <setting name="defaultFetchSize" value="100"/>
+        <setting name="safeRowBoundsEnabled" value="false"/>
+        <setting name="mapUnderscoreToCamelCase" value="false"/>
+        <setting name="localCacheScope" value="SESSION"/>
+        <setting name="jdbcTypeForNull" value="OTHER"/>
+        <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
+        <setting name="logImpl" value="LOG4J"/> <!-- 显示的告诉mybatis使用哪个日志工具，由于log4j的优先级在mybatis看来是低于web容器自带的commons logging的，所以不显示设置，mybatis会忽略我们的辛辛苦苦设置的log4j日志配置文件哈哈 更多有关mybatis和其他第三方日志系统的整合，见http://www.mybatis.org/mybatis-3/zh/logging.html -->
+    </settings>
+
+    <!-- 类型别名，减少完全限定名冗长的表达方式，   -->
+    <typeAliases>
+        <!-- 不推荐此种方式，类多就累死人       -->
+        <typeAlias alias="Author" type="domain.blog.Author"/>
+        <typeAlias alias="Blog" type="domain.blog.Blog"/>
+        <typeAlias alias="Comment" type="domain.blog.Comment"/>
+        <typeAlias alias="Post" type="domain.blog.Post"/>
+        <typeAlias alias="Section" type="domain.blog.Section"/>
+        <typeAlias alias="Tag" type="domain.blog.Tag"/>
+
+        <!-- 扫描一个包内的所有javaBean的@Alias注解，赋予@Alias的value为alias名，比如Blog类就是这么用的。此外我们常常不习惯使用@Alias，当JavaBean没有@Alias的时候，默认采用类名首字母小写 比如domain.blog.Author为author  -->
+        <package name="domain.blog"/>
+    </typeAliases>
+
+    <!-- 环境变量（默认），SqlSessionFactory会使用这个配置来初始化数据库连接   -->
+    <!-- 可以定义多个Envrioment   -->
+    <!-- 你也可以自定义Environments类来编写出多个可以供SqlSessionFactory使用的配置，这样就可以达到多个SqlSessionFactory，每个SqlSessionFactory连接不同的数据库 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 事务管理器，type=”[JDBC|MANAGED]”，和Spring结合使用的时候，不需要用到Mybatis的事务管理器，了解即可-->
+            <transactionManager type="JDBC"/>
+<!--            <transactionManager type="MANAGED">-->
+<!--                <property name="closeConnection" value="false"/>-->
+<!--            </transactionManager>-->
+
+            <!-- 数据源，type=”[UNPOOLED|POOLED|JNDI]”            -->
+            <!-- 不使用数据库池进行连接 -->
+            <dataSource type="UNPOOLED">
+                <property name="username" value="${username:zazalu}"/> <!-- if username is not find, then will use 'zazalu' ,since mybatis 3.4.2-->
+                <property name="password" value="${password}"/>
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="defaultTransactionIsolationLevel" value="${level:REPEATABLE_READ}"/>
+                <property name="driver.encoding" value="${encode:UTF8}"/>
+            </dataSource>
+
+            <!-- 使用数据库池进行连接，最流行 -->
+<!--            <dataSource type="UNPOOLED"> -->
+<!--                &lt;!&ndash; if username is not find, then will use 'zazalu' ,since mybatis 3.4.2&ndash;&gt;-->
+<!--                <property name="username" value="${username:zazalu}"/> -->
+<!--                <property name="password" value="${password}"/>-->
+<!--                <property name="driver" value="${driver}"/>-->
+<!--                <property name="url" value="${url}"/>-->
+<!--                <property name="defaultTransactionIsolationLevel" value="${level:REPEATABLE READ}"/>-->
+<!--                <property name="driver.encoding" value="${encode:UTF8}"/>-->
+<!--                <property name="poolMaximumActiveConnections" value="${最大活跃连接数：10}"/>-->
+<!--                <property name="poolMaximumIdleConnections" value="${最大空闲连接数：}"/>-->
+<!--                <property name="poolMaximumCheckoutTime" value="${不懂啥意思}"/>-->
+<!--                <property name="poolTimeToWait" value="${最大连接等待时间：20000}"/>-->
+<!--                <property name="poolMaximumLocalBadConnectionTolerance" value="${}"/>-->
+<!--                <property name="poolPingQuery" value="${}"/>-->
+<!--                <property name="poolPingEnabled" value="${}"/>-->
+<!--                <property name="poolPingConnectionsNotUsedFor" value="${}"/>  -->
+<!--                &lt;!&ndash; 具体说明请见http://www.mybatis.org/mybatis-3/zh/configuration.html#environments &ndash;&gt;-->
+<!--            </dataSource>-->
+
+            <!-- 在如 EJB 或应用服务器这类容器中使用的一种数据源类型 -->
+<!--            <dataSource type="JNDI">-->
+<!--                <property name="initial_context" value="${}"/>-->
+<!--                <property name="data_source" value="${}"/>-->
+<!--                <property name="env.encoding" value="${}"/>-->
+<!--            </dataSource>-->
+
+            <!-- 使用第三方数据源，比如c3p0 -->
+            <!-- type对应的是一个DataSourceFactory的实现类 -->
+<!--            <dataSource type="org.myproject.C3P0DataSourceFactory">-->
+<!--                <property name="driver" value="org.postgresql.Driver"/>-->
+<!--                <property name="url" value="jdbc:postgresql:mydb"/>-->
+<!--                <property name="username" value="postgres"/>-->
+<!--                <property name="password" value="root"/>-->
+<!--            </dataSource>-->
+        </environment>
+    </environments>
+
+    <!-- 数据库厂商标识，不懂做啥的    -->
+    <databaseIdProvider type="DB_VENDOR">
+        <property name="SQL Server" value="sqlserver"/>
+        <property name="DB2" value="db2"/>
+        <property name="Oracle" value="oracle" />
+    </databaseIdProvider>
+
+    <!-- 加载映射器类 ，有多种写法来加载mapper-->
+    <mappers>
+        <mapper resource="org/mybatis/example/BlogMapper.xml"/>
+        <mapper url="file:///var/mappers/AuthorMapper.xml"/>
+        <mapper class="org.mybatis.builder.AuthorMapper"/>
+        <package name="org.mybatis.builder"/>
+    </mappers>
+
+
+</configuration>

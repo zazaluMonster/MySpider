@@ -9,8 +9,9 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
 3. Downloader，用于处理各类网络下载需求，保存源数据至本地
 4. HttpHeadParser，用于处理HTTP报文头数据
 5. Processor，用于处理源数据，爬取我们需要的信息，保存至结果文件内
-6. DataStorage，将爬取数据持久化（比如保存至mysql，mongodb，ElasticSearch）（暂未完成，过几天补）
-7. DataObject，爬取的数据其抽象成的Java对象
+6. DataService，提供数据持久化的服务，最基本的为数据的crud接口（比如保存至mysql，mongodb，ElasticSearch）（暂未完成，过几天补）
+7. DataObject，存放POJO类的地方
+8. DatabaseAssist，若使用了数据库作为数据持久化工具，则必须将所有为了连接数据库而产生的相关辅助类全部放在DatabaseAssist包内，比如使用了mybatis，则建立mybatis子包，将mapper类和mapper.xml文件全部放置在这里。
 8. Constants，运行时常量库
 9. MySpider，一个MySpider代表一个网络爬虫的对象，可以调用其他组件的功能
 10. MyLogger，封装第三方日志文件的调用接口，使得替换日志文件框架不会对项目本体代码造成任何影响（无痛替换）
