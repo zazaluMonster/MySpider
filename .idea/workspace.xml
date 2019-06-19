@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff01a19f-b2c2-4cd8-b602-c244b4474345" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataObject/YouthNews.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataService/DataService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataService/mybatis/YouthNewsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DatabaseAssist/mybatis/BaseMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DatabaseAssist/mybatis/mapper/YouthNewsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DatabaseAssist/mybatis/mapper/YouthNewsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Util/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/MySpider.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/Youth.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MySpiderStart/MySpider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MySpiderStart/MySpider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Processor/custom/YouthProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Processor/custom/YouthProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/properties/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/properties/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/properties/mybatis-config.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ff01a19f-b2c2-4cd8-b602-c244b4474345" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="132">
+              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,21 +71,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://fd46c3c7-ef1e-454d-b8cc-fc27b3f655f8/schema/MySpider/table/YOUTH_NEWS">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="4b8f082e-c148-4c15-b4d0-c36b7eafbc81">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/sql/Youth.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -135,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/DataService/mybatis/YouthNewsService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#499#500#0" expanded="true" />
@@ -150,7 +119,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="1062">
-                <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+                <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
               </first_editor>
               <second_editor />
             </state>
@@ -173,7 +142,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseAssist/mybatis/mapper/YouthNewsMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -182,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/properties/mybatis-config.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="11" column="48" lean-forward="true" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -313,7 +282,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="72" />
     <option name="y" value="47" />
     <option name="width" value="1400" />
@@ -381,6 +350,22 @@
               <item name="MySpider" type="b2602c69:ProjectViewProjectNode" />
               <item name="MySpider" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="download" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MySpider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="ProcessorTmp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MySpider" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -393,6 +378,20 @@
               <item name="MySpider" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MySpider" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="download" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MySpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MySpider" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="ProcessorTmp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MySpider" type="b2602c69:ProjectViewProjectNode" />
@@ -545,7 +544,7 @@
       <workItem from="1560739333041" duration="30028000" />
       <workItem from="1560827253891" duration="1583000" />
       <workItem from="1560869641321" duration="320000" />
-      <workItem from="1560910313392" duration="25057000" />
+      <workItem from="1560910313392" duration="25393000" />
     </task>
     <task id="LOCAL-00001" summary="MySpider first commit">
       <created>1560769980362</created>
@@ -618,11 +617,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98418000" />
+    <option name="totallyTimeSpent" value="98754000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1545" height="873" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1545" height="873" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7006237" visible="true" weight="0.26684457" />
       <window_info id="Structure" order="1" sideWeight="0.2993763" side_tool="true" weight="0.26684457" />
@@ -636,7 +634,7 @@
       <window_info anchor="bottom" id="SQL Generator" weight="0.32884097" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32884097" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.351752" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.351752" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39892185" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1085,14 +1083,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/properties/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="11" column="48" lean-forward="true" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseAssist/mybatis/mapper/YouthNewsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1109,7 +1107,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/sql/Youth.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1130,19 +1128,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://fd46c3c7-ef1e-454d-b8cc-fc27b3f655f8/schema/MySpider/table/YOUTH_NEWS">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="4b8f082e-c148-4c15-b4d0-c36b7eafbc81">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DataService/mybatis/YouthNewsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#499#500#0" expanded="true" />
@@ -1155,16 +1144,25 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1062">
-            <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+            <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="das://fd46c3c7-ef1e-454d-b8cc-fc27b3f655f8/schema/MySpider/table/YOUTH_NEWS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="4b8f082e-c148-4c15-b4d0-c36b7eafbc81">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        <state relative-caret-position="132">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
