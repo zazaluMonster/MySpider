@@ -9,7 +9,7 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
 3. Downloader，用于处理各类网络下载需求，保存源数据至本地
 4. HttpHeadParser，用于处理HTTP报文头数据
 5. Processor，用于处理源数据，爬取我们需要的信息，保存至结果文件内
-6. DataService，提供数据持久化的服务，最基本的为数据的crud接口（比如保存至mysql，mongodb，ElasticSearch）（暂未完成，过几天补）
+6. DataService，提供数据持久化的服务，最基本的为数据的crud接口（默认采用mybatisDataService来使用mybatis进行数据库操作，你可以编写自定义的DataService来使用别的你想用的持久层框架）
 7. DataObject，存放POJO类的地方
 8. DatabaseAssist，若使用了数据库作为数据持久化工具，则必须将所有为了连接数据库而产生的相关辅助类全部放在DatabaseAssist包内，比如使用了mybatis，则建立mybatis子包，将mapper类和mapper.xml文件全部放置在这里。
 8. Constants，运行时常量库
@@ -26,6 +26,7 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
  1. properties，存储各类配置文件
  2. download，存储Download下载完毕的源数据
  3. ProcessorTmp，存储ProcessorTmp爬取的数据的临时文件
+ 4. sql，存放sql文件
  
  # What can you learn from your MySpider
  
@@ -38,6 +39,12 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
  # How To Start
  
  执行Main类的main方法
+ 
+ [其他注意事项] 
+ 1. useThreads = true 则使用多线程启动
+ 2. 为MySpider添加DataService组件则会自动将数据保存至数据库而不是存至临时文件
+ 3. 若使用DataService，请确保数据库连接的线程安全，推荐使用ThreadLocal实现，我本人采用了限定连接对象在method scope内，因为其简单且满足目前需求
+ 
  
  # Join us
  

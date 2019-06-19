@@ -1,6 +1,7 @@
 package Main;
 
 import Boot.custom.DemoBoot;
+import DataService.mybatis.YouthNewsService;
 import DownLoader.custom.StreamDownloader;
 import MySpiderStart.MySpider;
 import Processor.custom.YouthProcessor;
@@ -18,7 +19,7 @@ public class Main {
 
     private static ExecutorService executorService = Executors.newFixedThreadPool(10);
     private static URL[] urls;
-    public static boolean useThreads = false;
+    public static boolean useThreads = true;
 
 
     public static void main(String[] args) throws Exception {
@@ -37,7 +38,8 @@ public class Main {
                     .addBoot(new DemoBoot())
                     .addDownloader(new StreamDownloader())
                     .addProcessor(new YouthProcessor("zazalu"))
-                    .addScheduleQueue(new DemoScheduleQueue());
+                    .addScheduleQueue(new DemoScheduleQueue())
+                    .addDataService(new YouthNewsService());
             mySpider.start();
         }
         //多线程启动demo
@@ -50,7 +52,8 @@ public class Main {
                                 .addBoot(new DemoBoot())
                                 .addDownloader(new StreamDownloader())
                                 .addProcessor(new YouthProcessor("zazalu"))
-                                .addScheduleQueue(new DemoScheduleQueue());
+                                .addScheduleQueue(new DemoScheduleQueue())
+                                .addDataService(new YouthNewsService());
                         spider.start();
                     } catch (Exception e) {
                         e.printStackTrace();

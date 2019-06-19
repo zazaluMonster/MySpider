@@ -21,6 +21,11 @@
             <artifactId>mybatis</artifactId>
             <version>3.5.1</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.16</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -37,12 +42,26 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Main.MySpiderStart</mainClass>
+                            <mainClass>Main.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
+        <!-- maven项目在编译的时候会严格区分src和resource文件夹，在src下的非java代码都不会编译到classes里，比如这个例子：https://blog.csdn.net/ZZY1078689276/article/details/75093580
+             使用如下配置就可以强制让src/main/java下的xml文件全部也参与编译
+        -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
+
+
 
 </project>

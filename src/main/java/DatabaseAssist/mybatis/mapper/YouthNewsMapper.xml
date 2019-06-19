@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DatabaseAssist.mybatis.mapper.YouthNewsMapper">
+
+	<cache/>
+	<resultMap id="youthNewsResultMap" type="youthNews">
+		<id property="id" column="id" javaType="_int" jdbcType="NUMERIC" />
+		<result property="releaseTime" column="release_time" javaType="Date" jdbcType="TIMESTAMP"/>
+		<result property="title" column="title" javaType="String" jdbcType="VARCHAR"/>
+		<result property="crawlTime" column="crawl_time" javaType="Date" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<!-- crud	-->
+	<select id="select" resultType="youthNews">
+		select * from YOUTH_NEWS where id = #{id}
+	</select>
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		insert into YOUTH_NEWS (
+			release_time,
+			title,
+			crawl_time
+		)
+		values (
+			#{releaseTime},
+			#{title},
+			#{crawlTime}
+		)
+	</insert>
+
+	<insert id="inserts" useGeneratedKeys="true"
+			keyProperty="id" parameterType="list">
+		insert into YOUTH_NEWS (release_time, title, crawl_time) values
+		<foreach collection="list" item="element" open="(" separator="),("  close=")">
+			#{element.releaseTime},
+			#{element.title},
+			#{element.crawlTime}
+		</foreach>
+	</insert>
+
+	<update id="update">
+		update YOUTH_NEWS set
+		release_time = #{releaseTime},
+		title = #{title},
+		crawl_time = #{crawlTime}
+		where id = #{id}
+	</update>
+
+	<delete id="delete">
+		delete from YOUTH_NEWS where id = #{id}
+	</delete>
+</mapper>
+
+
+
+
