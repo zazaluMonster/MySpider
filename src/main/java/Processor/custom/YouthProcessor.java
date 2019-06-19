@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 中国青年网解析器
+ * 中国青年网解析器，没有使用其他HTML解析工具，纯粹手写的一个简单的解析器。如果你喜欢快捷的解析html，那么Jsoup是你的一个选择
  */
 public class YouthProcessor extends AbstractProcessor<YouthNews> {
 
