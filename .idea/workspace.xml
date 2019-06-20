@@ -563,7 +563,7 @@
       <workItem from="1560869641321" duration="320000" />
       <workItem from="1560910313392" duration="27517000" />
       <workItem from="1560961149602" duration="704000" />
-      <workItem from="1560994326462" duration="5236000" />
+      <workItem from="1560994326462" duration="5506000" />
     </task>
     <task id="LOCAL-00001" summary="MySpider first commit">
       <created>1560769980362</created>
@@ -636,7 +636,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106818000" />
+    <option name="totallyTimeSpent" value="107088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1545" height="873" extended-state="6" />
