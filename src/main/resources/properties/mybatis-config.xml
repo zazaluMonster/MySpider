@@ -18,6 +18,7 @@
         <setting name="useGeneratedKeys" value="false"/>
         <setting name="defaultExecutorType" value="REUSE"/>
         <setting name="defaultStatementTimeout" value="25"/>
+        <setting name="logImpl" value="LOG4J"/>
     </settings>
 
     <typeAliases>

@@ -19,7 +19,7 @@ public class Main {
 
     private static ExecutorService executorService = Executors.newFixedThreadPool(10);
     private static URL[] urls;
-    public static boolean useThreads = true;
+    public static boolean useThreads = false;
 
 
     public static void main(String[] args) throws Exception {
