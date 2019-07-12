@@ -35,8 +35,8 @@ public abstract class AbstractBoot implements Boot{
                 MyLogger.log("boot success! ^_^");
             }
 
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            MyLogger.log("boot启动出现了一些问题");
         }
     }
 

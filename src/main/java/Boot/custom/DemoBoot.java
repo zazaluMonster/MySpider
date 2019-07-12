@@ -26,7 +26,7 @@ public class DemoBoot extends AbstractBoot {
         return properties;
     }
 
-    protected boolean initConstants(Properties properties){
+    protected boolean initConstants(Properties properties) {
         //init your constans here
         Constants.theadPoolSize = Integer.parseInt(properties.getProperty("ThreadPoolSize"));
         Constants.executeTimes = Integer.parseInt(properties.getProperty("executeTimes"));

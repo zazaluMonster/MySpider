@@ -7,6 +7,7 @@ import MySpiderStart.MySpider;
 import Processor.custom.YouthProcessor;
 import ScheduleQueue.custom.DemoScheduleQueue;
 import Util.MyLogger;
+import Util.MySpiderFactory;
 
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
@@ -23,6 +24,7 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
+
         //URL数据demo
         urls = new URL[]{
                 new URL("http://news.youth.cn/gn/index.htm"),
@@ -34,12 +36,8 @@ public class Main {
 
         //单线程启动demo
         if(!useThreads){
-            MySpider mySpider = new MySpider(urls)
-                    .addBoot(new DemoBoot())
-                    .addDownloader(new StreamDownloader())
-                    .addProcessor(new YouthProcessor("zazalu"))
-                    .addScheduleQueue(new DemoScheduleQueue())
-                    .addDataService(new YouthNewsService());
+            //从工厂类中获得一个爬虫实例
+            MySpider mySpider =  MySpiderFactory.getYouthNewsSpider(urls);
             mySpider.start();
         }
         //多线程启动demo
@@ -48,13 +46,8 @@ public class Main {
                     urls) {
                 executorService.submit(() -> {
                     try {
-                        MySpider spider = new MySpider(new URL[]{url})
-                                .addBoot(new DemoBoot())
-                                .addDownloader(new StreamDownloader())
-                                .addProcessor(new YouthProcessor("zazalu"))
-                                .addScheduleQueue(new DemoScheduleQueue())
-                                .addDataService(new YouthNewsService());
-                        spider.start();
+                        MySpider mySpider =  MySpiderFactory.getYouthNewsSpiderForTheads(url);
+                        mySpider.start();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
