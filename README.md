@@ -48,6 +48,9 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
  2. 为MySpider添加DataService组件则会自动将数据保存至数据库而不是存至临时文件
  3. 若使用DataService，请确保数据库连接的线程安全，推荐使用ThreadLocal实现，我本人采用了限定连接对象在method scope内，因为其简单且满足目前需求
  
+ [如何整合到Spring项目中]
+1. 我今天尝试将MySpider整合到了自己的Spring项目中去,发现dataService那一层组件很难整合到自己的Spring项目中，有非常高的耦合度，后续会剔除此模块，使得MySpider只提供纯粹的数据爬取，而不在乎数据持久化。
+2. 数据持久化应该是使用了MySpider去爬取数据的具体项目本身的任务，而非MySpider的任务，所以我会在后续为MySpider提供一个全新的数据接口，可以在每次爬取完指定信息后，通过调用该接口可以获取到信息的集合list或者map
  
  # Join us
  
