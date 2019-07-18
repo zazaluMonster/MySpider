@@ -45,7 +45,7 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
  
  [其他注意事项] 
  1. useThreads = true 则使用多线程启动
- 2. 为MySpider添加DataService组件则会自动将数据保存至数据库而不是存至临时文件
+ 2. 为MySpider添加DataService组件则会自动将数据保存至数据库而不是存至临时文件（注意先配置数据库，mybatis-config.xml）
  3. 若使用DataService，请确保数据库连接的线程安全，推荐使用ThreadLocal实现，我本人采用了限定连接对象在method scope内，因为其简单且满足目前需求
  
  [整合到Spring项目]
