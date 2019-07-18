@@ -37,7 +37,7 @@ public class Main {
         //单线程启动demo
         if(!useThreads){
             //从工厂类中获得一个爬虫实例
-            MySpider mySpider =  MySpiderFactory.getYouthNewsSpider(urls);
+            MySpider mySpider =  MySpiderFactory.getYouthNewsSpiderNoDataService(urls);
             mySpider.start();
         }
         //多线程启动demo
@@ -46,7 +46,7 @@ public class Main {
                     urls) {
                 executorService.submit(() -> {
                     try {
-                        MySpider mySpider =  MySpiderFactory.getYouthNewsSpiderForTheads(url);
+                        MySpider mySpider =  MySpiderFactory.getYouthNewsSpiderNoDataServiceForTheads(url);
                         mySpider.start();
                     } catch (Exception e) {
                         e.printStackTrace();

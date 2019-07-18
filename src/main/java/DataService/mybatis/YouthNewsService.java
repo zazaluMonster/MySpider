@@ -48,7 +48,7 @@ public class YouthNewsService implements DataService<YouthNews> {
     }
 
     @Override
-    public void adds(List<YouthNews> obj) throws ClassNotFoundException {
+    public void adds(List<YouthNews> obj) {
         SqlSession session = sqlSessionFactory.openSession(true);
         YouthNewsMapper youthNewsMapper = session.getMapper(YouthNewsMapper.class);
         youthNewsMapper.inserts(obj);
