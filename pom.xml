@@ -53,15 +53,23 @@
                 </configuration>
             </plugin>
         </plugins>
-        <!-- maven项目在编译的时候会严格区分src和resource文件夹，在src下的非java代码都不会编译到classes里，比如这个例子：https://blog.csdn.net/ZZY1078689276/article/details/75093580
-             使用如下配置就可以强制让src/main/java下的xml文件全部也参与编译
-        -->
+
         <resources>
+            <!-- maven项目在编译的时候会严格区分src和resource文件夹，在src下的非java代码都不会编译到classes里，比如这个例子：https://blog.csdn.net/ZZY1078689276/article/details/75093580
+			使用如下配置就可以强制让src/main/java下的xml文件全部也参与编译
+	        -->
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
                     <include>**/*.xml</include>
                 </includes>
+                <filtering>false</filtering>
+            </resource>
+            <!--
+                maven方式指定resource文件夹(由于部分小伙伴使用的非idea，可能会导致编译结束后classpath下不存在resource文件夹下的文件，故在此加入maven resource配置)
+	        -->
+            <resource>
+                <directory>src/main/resources</directory>
                 <filtering>false</filtering>
             </resource>
         </resources>

@@ -40,7 +40,7 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
  
  我没有提供一个完备的jar文件，因为MySpider的具体功能可以由你自己实现。
  在MySpider中，我已经提供了一个完整的Demo程序（爬取中国青年网数据，一次爬取5页）
- 你可以在使用eclipse或者idea使用maven项目选项进行导入，
+ 你可以在使用eclipse或者idea使用maven项目选项进行导入，使用maven的compile指令编译本项目
  随后执行Main类的main方法，即可运行我提供的这个Demo程序
  
  [其他注意事项] 
