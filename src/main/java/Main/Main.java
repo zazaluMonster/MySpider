@@ -34,7 +34,6 @@ public class Main {
                 new URL("http://news.youth.cn/gn/index_4.htm")
         };
 
-
         //单线程启动demo
         if(!useThreads){
             //从工厂类中获得一个爬虫实例
