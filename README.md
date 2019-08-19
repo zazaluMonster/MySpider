@@ -52,7 +52,6 @@ MySpider是使用Java语言实现的网络爬虫项目，它本来是我的一�
 1. 我今天尝试将MySpider整合到了自己的Spring项目中去,发现dataService那一层组件很难整合到自己的Spring项目中，有非常高的耦合度，后续会剔除此模块，使得MySpider只提供纯粹的数据爬取，而不在乎数据持久化。
 2. 数据持久化应该是使用了MySpider去爬取数据的具体项目本身的任务，而非MySpider的任务，所以我会在后续为MySpider提供一个全新的数据接口，可以在每次爬取完指定信息后，通过调用该接口可以获取到信息的集合list或者map
  
- [将MySpider整合到Spring项目中的demo项目,内容也很基础，欢迎新人star](https://github.com/zazaluMonster/MyBelfast) 
  
  
  # Join us
