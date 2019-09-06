@@ -11,6 +11,11 @@ public class StringUtil {
 
     public static String getRandomFileName() {
 
+        /**
+         * 可以使用DateTimeFormatter代替SimpleDateFormat
+         * 因为SimpleDateFormat是非线程安全的
+         * 不过由于我这里每次都会new一个新的SimpleDateFormat实例,所以不会发生线程安全问题
+         */
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyMMddHHmmssZ");
 
         Date date = new Date();
