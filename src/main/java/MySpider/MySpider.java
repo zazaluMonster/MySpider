@@ -1,4 +1,4 @@
-package MySpiderStart;
+package MySpider;
 
 import Boot.Boot;
 import Boot.custom.DemoBoot;
@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * 网络爬虫入口程序
+ * MySpider实体类
  */
 public class MySpider {
 

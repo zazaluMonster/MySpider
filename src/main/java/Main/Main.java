@@ -1,11 +1,6 @@
 package Main;
 
-import Boot.custom.DemoBoot;
-import DataService.mybatis.YouthNewsService;
-import DownLoader.custom.StreamDownloader;
-import MySpiderStart.MySpider;
-import Processor.custom.YouthProcessor;
-import ScheduleQueue.custom.DemoScheduleQueue;
+import MySpider.MySpider;
 import Util.MyLogger;
 import Util.MySpiderFactory;
 
@@ -14,7 +9,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 网络爬虫入口程序
+ * MySpider运行测试demo, 对中国青年网的部分数据进行爬取, 可以单线程, 也可以多线程启动同时爬取
  */
 public class Main {
 

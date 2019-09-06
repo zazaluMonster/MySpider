@@ -3,7 +3,7 @@ package Util;
 import Boot.custom.DemoBoot;
 import DataService.mybatis.YouthNewsService;
 import DownLoader.custom.StreamDownloader;
-import MySpiderStart.MySpider;
+import MySpider.MySpider;
 import Processor.custom.YouthProcessor;
 import ScheduleQueue.custom.DemoScheduleQueue;
 
