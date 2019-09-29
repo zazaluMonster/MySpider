@@ -9,7 +9,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * MySpider运行测试demo, 对中国青年网的部分数据进行爬取, 可以单线程, 也可以多线程启动同时爬取
+ * MySpider运行测试demo, 对中国青年网的部分数据进行爬取, 可以开多个线程同时爬取
+ *
  */
 public class Main {
 
