@@ -8,12 +8,39 @@ import org.junit.Test;
 
 import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
 public class TestGetHtml {
+
+    public String getName() {
+        return StringUtil.getRandomFileName();
+    }
+
+    // 测试网易云首页能否正常直接爬取
+    @Test
+    public void testWangYiYunWebHtmlCanCrawl() throws Exception {
+        URL url = new URL("https://music.163.com/discover/toplist?id=19723756");
+        File file = FIleUtil.createEmptyFile(new URL(FIleUtil.getPrefix("download")).getPath() ,getName());
+
+        InputStream inputStream = url.openStream();
+        OutputStream outputStream = new FileOutputStream(file);
+
+        try (BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+             BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream) ){
+            int c;
+            while( (c=bufferedInputStream.read()) != -1 ){
+                bufferedOutputStream.write(c);
+                bufferedOutputStream.flush();
+            }
+        }
+
+        MyLogger.log("Download complete.");
+    }
+
 
     @Test
     public void testUseJavaToGetHtmlAndCrawl() throws IOException {
